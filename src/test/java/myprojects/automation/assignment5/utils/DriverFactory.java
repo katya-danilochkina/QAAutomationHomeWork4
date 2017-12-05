@@ -38,6 +38,17 @@ public class DriverFactory {
                 capabilities.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
                 capabilities.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
                 return new InternetExplorerDriver(capabilities);
+            case "chrome_mobile":
+                System.setProperty(
+                        "webdriver.chrome.driver",
+                        new File(DriverFactory.class.getResource("/chromedriver").getFile()).getPath());
+                Map<String, String> mobileEmulator = new HashMap<>();
+                mobileEmulator.put("deviceName", "iPhone 6");
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulator);
+                return new ChromeDriver(chromeOptions);
+            case "safari":
+                return new SafariDriver();
             case "chrome":
             default:
                 System.setProperty(
