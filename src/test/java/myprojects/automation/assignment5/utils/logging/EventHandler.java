@@ -12,6 +12,26 @@ import java.util.stream.Collectors;
 public class EventHandler implements WebDriverEventListener {
 
     @Override
+    public void beforeAlertAccept(WebDriver webDriver) {
+
+    }
+
+    @Override
+    public void afterAlertAccept(WebDriver webDriver) {
+
+    }
+
+    @Override
+    public void afterAlertDismiss(WebDriver webDriver) {
+
+    }
+
+    @Override
+    public void beforeAlertDismiss(WebDriver webDriver) {
+
+    }
+
+    @Override
     public void beforeNavigateTo(String url, WebDriver driver) {
         CustomReporter.log("Navigate to " + url);
     }

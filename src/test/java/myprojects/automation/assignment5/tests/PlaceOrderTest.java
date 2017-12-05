@@ -1,18 +1,26 @@
 package myprojects.automation.assignment5.tests;
 
 import myprojects.automation.assignment5.BaseTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class PlaceOrderTest extends BaseTest {
 
     @Test
-    public void checkSiteVersion() {
-        // TODO open main page and validate website version
+    @Parameters("version")
+    public void checkSiteVersion(String version) {
+        actions.checkSiteVersion(version);
     }
 
     @Test
     public void createNewOrder() {
-        // TODO implement order creation test
+        actions.openRandomProduct();
+        actions.saveProductParameters();
+        actions.addProductToCart();
+        actions.proceedOrderCreation();
+        actions.fillOrderInfo();
+        actions.checkCreatedOrderInfo();
+        actions.checkProductCountChange();
 
         // open random product
 

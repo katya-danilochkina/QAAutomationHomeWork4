@@ -5,7 +5,39 @@
         <parameter name="selenium.browser" value="chrome" />
         <parameter name="selenium.grid" value="http://localhost:4444/wd/hub" />
         <classes>
-            <class name="myprojects.automation.assignment5.tests.PlaceOrderTest" />
+            <class name="myprojects.automation.assignment5.tests.PlaceOrderTest">
+                <parameter name="version" value="desktop" />
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Order [Firefox]" >
+        <parameter name="selenium.browser" value="firefox" />
+        <parameter name="selenium.grid" value="http://localhost:4444/wd/hub" />
+        <classes>
+            <class name="myprojects.automation.assignment5.tests.PlaceOrderTest">
+                <parameter name="version" value="desktop" />
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Order [Chrome Mobile]" >
+        <parameter name="selenium.browser" value="chrome_movile" />
+        <parameter name="selenium.grid" value="http://localhost:4444/wd/hub" />
+        <classes>
+            <class name="myprojects.automation.assignment5.tests.PlaceOrderTest">
+                <parameter name="version" value="mobile" />
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Order [Safari]" >
+        <parameter name="selenium.browser" value="safari" />
+        <parameter name="selenium.grid" value="http://localhost:4444/wd/hub" />
+        <classes>
+            <class name="myprojects.automation.assignment5.tests.PlaceOrderTest">
+                <parameter name="version" value="desktop" />
+            </class>
         </classes>
     </test>
 
